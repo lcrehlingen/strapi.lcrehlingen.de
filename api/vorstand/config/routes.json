@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vorstands",
+      "handler": "vorstand.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vorstands/count",
+      "handler": "vorstand.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vorstands/:id",
+      "handler": "vorstand.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vorstands",
+      "handler": "vorstand.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vorstands/:id",
+      "handler": "vorstand.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vorstands/:id",
+      "handler": "vorstand.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "name": "Training",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "reha": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  }
+}

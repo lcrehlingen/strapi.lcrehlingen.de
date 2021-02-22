@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainers",
+  "info": {
+    "name": "Trainer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "trainings": {
+      "collection": "training"
+    },
+    "reha": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

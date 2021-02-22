@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/rekords",
+      "handler": "rekord.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rekords/count",
+      "handler": "rekord.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rekords/:id",
+      "handler": "rekord.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/rekords",
+      "handler": "rekord.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/rekords/:id",
+      "handler": "rekord.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/rekords/:id",
+      "handler": "rekord.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
