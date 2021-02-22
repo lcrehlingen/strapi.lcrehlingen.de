@@ -23,7 +23,7 @@
       "type": "richtext",
       "required": true
     },
-    "image": {
+    "thumbnail": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -35,6 +35,15 @@
     "category": {
       "model": "category",
       "via": "articles"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

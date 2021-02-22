@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/trainingszeits",
+      "handler": "trainingszeit.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trainingszeits/count",
+      "handler": "trainingszeit.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trainingszeits/:id",
+      "handler": "trainingszeit.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/trainingszeits",
+      "handler": "trainingszeit.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/trainingszeits/:id",
+      "handler": "trainingszeit.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/trainingszeits/:id",
+      "handler": "trainingszeit.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

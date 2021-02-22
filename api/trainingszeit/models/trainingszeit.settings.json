@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainingszeits",
+  "info": {
+    "name": "Trainingszeit",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "day": {
+      "type": "enumeration",
+      "enum": [
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+        "Sonntag"
+      ],
+      "required": true
+    },
+    "start": {
+      "type": "time",
+      "required": true
+    },
+    "end": {
+      "type": "time"
+    },
+    "trainings": {
+      "collection": "training",
+      "via": "times",
+      "dominant": true
+    }
+  }
+}

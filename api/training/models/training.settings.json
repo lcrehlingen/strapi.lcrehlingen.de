@@ -23,6 +23,14 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "trainers": {
+      "via": "trainings",
+      "collection": "trainer"
+    },
+    "times": {
+      "via": "trainings",
+      "collection": "trainingszeit"
     }
   }
 }
