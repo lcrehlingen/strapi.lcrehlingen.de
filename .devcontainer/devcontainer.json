@@ -1,0 +1,10 @@
+{
+    "name": "LCR - Strapi",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh"
+    },
+}

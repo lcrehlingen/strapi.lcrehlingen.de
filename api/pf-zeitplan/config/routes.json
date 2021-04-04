@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pf-zeitplan",
+      "handler": "pf-zeitplan.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pf-zeitplan",
+      "handler": "pf-zeitplan.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pf-zeitplan",
+      "handler": "pf-zeitplan.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

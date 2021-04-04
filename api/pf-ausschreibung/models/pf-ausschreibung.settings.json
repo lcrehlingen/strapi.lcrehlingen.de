@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "pf_ausschreibungs",
+  "info": {
+    "name": "PF-Ausschreibung"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

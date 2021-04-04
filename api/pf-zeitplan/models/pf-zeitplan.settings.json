@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "pf_zeitplans",
+  "info": {
+    "name": "PF-Zeitplan"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

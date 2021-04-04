@@ -18,4 +18,7 @@ module.exports = {
   // '0 1 * * 1': () => {
   //
   // }
+  '0 */12 * * *': () => {
+    strapi.plugins.sitemap.services.sitemap.createSitemap();
+  },
 };
