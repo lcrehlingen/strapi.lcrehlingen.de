@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "veranstaltungs",
+  "info": {
+    "name": "Veranstaltung",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "Link": {
+      "type": "dynamiczone",
+      "components": [
+        "list.list-entry"
+      ],
+      "required": false
+    },
+    "articles": {
+      "collection": "article"
+    }
+  }
+}
