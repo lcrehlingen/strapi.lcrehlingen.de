@@ -35,15 +35,18 @@
       "targetField": "name",
       "required": true
     },
-    "Link": {
-      "type": "dynamiczone",
-      "components": [
-        "list.list-entry"
-      ],
-      "required": false
-    },
     "articles": {
       "collection": "article"
+    },
+    "results": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.list-entry"
     }
   }
 }

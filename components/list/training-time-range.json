@@ -1,15 +1,11 @@
 {
-  "kind": "collectionType",
-  "collectionName": "trainingszeits",
+  "collectionName": "components_list_training_time_ranges",
   "info": {
-    "name": "Trainingszeit",
+    "name": "TrainingTimeRange",
+    "icon": "calendar-alt",
     "description": ""
   },
-  "options": {
-    "increments": true,
-    "timestamps": true,
-    "draftAndPublish": false
-  },
+  "options": {},
   "attributes": {
     "day": {
       "type": "enumeration",
@@ -29,12 +25,8 @@
       "required": true
     },
     "end": {
-      "type": "time"
-    },
-    "trainings": {
-      "collection": "training",
-      "via": "times",
-      "dominant": true
+      "type": "time",
+      "required": true
     }
   }
 }

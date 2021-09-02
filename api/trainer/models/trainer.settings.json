@@ -26,8 +26,8 @@
       "required": true
     },
     "trainings": {
-      "collection": "training",
       "via": "trainers",
+      "collection": "training",
       "dominant": true
     },
     "reha": {

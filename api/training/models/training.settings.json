@@ -28,9 +28,12 @@
       "via": "trainings",
       "collection": "trainer"
     },
-    "times": {
-      "via": "trainings",
-      "collection": "trainingszeit"
+    "TrainingTimeRange": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.training-time-range",
+      "required": true,
+      "min": 1
     }
   }
 }
