@@ -75,6 +75,10 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "categories": {
+      "via": "articles",
+      "collection": "categories"
     }
   }
 }
