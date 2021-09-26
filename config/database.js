@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
-  defaultConnection: 'default',
+  defaultConnection: env('DATABASE_CLIENT','sqlite'),
   connections: {
-    default: {
+    sqlite: {
       connector: 'bookshelf',
       settings: {
         client: 'sqlite',
@@ -10,6 +10,18 @@ module.exports = ({ env }) => ({
       options: {
         useNullAsDefault: true,
       },
+    },
+    postgres: {
+      connector: 'bookshelf',
+      settings: {
+        client: 'postgres',
+        host: env('DATABASE_HOST', 'db'),
+        port: env.int('DATABASE_PORT', 5432),
+        database: env('DATABASE_NAME', 'strapi'),
+        username: env('DATABASE_USERNAME', 'strapi'),
+        password: env('DATABASE_PASSWORD', 'strapi'),
+      },
+      options: {},
     },
   },
 });
