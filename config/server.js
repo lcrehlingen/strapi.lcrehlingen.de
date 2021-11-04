@@ -5,9 +5,9 @@ module.exports = ({ env }) => ({
     enabled: true
   },
   proxy: env.bool('IS_PROXIED', true),
-  url: env('PUBLIC_URL', 'https://test.lcrehlingen.de/api/strapi'),
+  url: env('PUBLIC_URL', 'https://lc.nimarion.tech/api/strapi'),
   admin: {
-    url: env('PUBLIC_ADMIN_URL', 'https://test.lcrehlingen.de/admin'),
+    url: env('PUBLIC_ADMIN_URL', 'https://lc.nimarion.tech/admin'),
     auth: {
       secret: env('ADMIN_JWT_SECRET', '74e98953e4680255e0d8a85e410f9a33'),
     },
