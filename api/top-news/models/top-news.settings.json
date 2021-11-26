@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "top_news",
+  "info": {
+    "name": "TopNews"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
