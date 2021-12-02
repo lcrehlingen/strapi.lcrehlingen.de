@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/corona",
+      "handler": "corona.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/corona",
+      "handler": "corona.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/corona",
+      "handler": "corona.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
