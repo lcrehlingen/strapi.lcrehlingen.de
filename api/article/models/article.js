@@ -1,5 +1,3 @@
-'use strict'
-
 function dateToTimeStamp(date) {
   const dateInstance = new Date(date)
   return dateInstance.getTime()
@@ -7,7 +5,9 @@ function dateToTimeStamp(date) {
 
 module.exports = {
   meilisearch: {
+    indexName: "article",
     transformEntry(entry) {
+      console.log(entry)
       const transformedEntry = {
         ...entry,
         created_by: dateToTimeStamp(entry.created_by),
