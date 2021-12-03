@@ -34,6 +34,9 @@
       "component": "list.training-time-range",
       "required": true,
       "min": 1
+    },
+    "telephone": {
+      "type": "string"
     }
   }
 }
