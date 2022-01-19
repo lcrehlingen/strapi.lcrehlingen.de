@@ -35,8 +35,12 @@
       "required": true,
       "min": 1
     },
-    "telephone": {
-      "type": "string"
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

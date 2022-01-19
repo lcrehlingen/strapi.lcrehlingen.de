@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+ARG PRODUCTION_URL
+ENV PRODUCTION_URL=${PRODUCTION_URL}
 ENV NODE_ENV production
 ENV STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE de
 RUN apt-get update && apt-get install --force-yes -yy \

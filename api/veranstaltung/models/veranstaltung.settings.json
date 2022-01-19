@@ -43,10 +43,8 @@
       "default": false,
       "required": true
     },
-    "Link": {
-      "type": "component",
-      "repeatable": true,
-      "component": "list.list-entry"
+    "content": {
+      "type": "richtext"
     }
   }
 }

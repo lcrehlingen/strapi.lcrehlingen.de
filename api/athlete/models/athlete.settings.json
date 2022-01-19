@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "athletes",
   "info": {
-    "name": "Athlete"
+    "name": "Athlete",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -33,6 +34,10 @@
     },
     "text": {
       "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

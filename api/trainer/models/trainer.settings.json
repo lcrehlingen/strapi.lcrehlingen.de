@@ -23,16 +23,13 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "trainings": {
       "via": "trainers",
       "collection": "training",
       "dominant": true
-    },
-    "reha": {
-      "type": "boolean",
-      "default": false
     }
   }
 }

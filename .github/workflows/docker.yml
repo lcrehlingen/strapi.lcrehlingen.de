@@ -33,6 +33,15 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Set PRODUCTION_URL
+        id: tag
+        run: |
+          if [[ $GITHUB_REF == refs/heads/main ]]; then
+            PRODUCTION_URL="https://lcrehlingen.de"
+          else
+            PRODUCTION_URL="https://dev.lcrehlingen.de"
+          fi
+          echo ::set-output name=url::${PRODUCTION_URL}
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
@@ -40,3 +49,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            PRODUCTION_URL=${{ steps.tag.outputs.url }}

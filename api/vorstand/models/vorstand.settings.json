@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "vorstands",
   "info": {
-    "name": "Vorstand"
+    "name": "Vorstand",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,24 +20,6 @@
       "type": "string",
       "required": true
     },
-    "street": {
-      "type": "string"
-    },
-    "place": {
-      "type": "string"
-    },
-    "telephone": {
-      "type": "biginteger"
-    },
-    "mobile": {
-      "type": "biginteger"
-    },
-    "fax": {
-      "type": "biginteger"
-    },
-    "mail": {
-      "type": "string"
-    },
     "image": {
       "model": "file",
       "via": "related",
@@ -44,7 +27,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }
