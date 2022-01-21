@@ -93,6 +93,16 @@
           "localized": false
         }
       }
+    },
+    "authors": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "author.authors"
     }
   }
 }
