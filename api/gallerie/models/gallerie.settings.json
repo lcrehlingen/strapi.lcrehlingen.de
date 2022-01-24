@@ -28,7 +28,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "thumbnail": {
       "model": "file",
@@ -37,11 +38,17 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "date": {
       "type": "date",
       "required": true
+    },
+    "photographers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "author.authors"
     }
   }
 }
