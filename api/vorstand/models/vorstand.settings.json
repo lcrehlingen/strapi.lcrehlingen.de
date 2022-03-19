@@ -29,6 +29,9 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "email": {
+      "type": "email"
     }
   }
 }
