@@ -38,6 +38,10 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "worldathleticsId": {
+      "type": "biginteger",
+      "unique": true
     }
   }
 }
