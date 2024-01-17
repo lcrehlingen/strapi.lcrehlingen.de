@@ -37,7 +37,7 @@ jobs:
         id: tag
         run: |
           if [[ $GITHUB_REF == refs/heads/main ]]; then
-            PRODUCTION_URL="https://lcrehlingen.de"
+            PRODUCTION_URL="https://strapi.lcrehlingen.de"
           else
             PRODUCTION_URL="https://dev.lcrehlingen.de"
           fi
