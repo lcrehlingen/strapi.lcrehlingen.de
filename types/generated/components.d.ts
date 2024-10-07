@@ -1,6 +1,6 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ListTrainingTimeRange extends Schema.Component {
+export interface ListTrainingTimeRange extends Struct.ComponentSchema {
   collectionName: 'components_list_training_time_ranges';
   info: {
     icon: 'calendar-alt';
@@ -8,7 +8,7 @@ export interface ListTrainingTimeRange extends Schema.Component {
     displayName: 'TrainingTimeRange';
   };
   attributes: {
-    day: Attribute.Enumeration<
+    day: Schema.Attribute.Enumeration<
       [
         'Montag',
         'Dienstag',
@@ -16,30 +16,30 @@ export interface ListTrainingTimeRange extends Schema.Component {
         'Donnerstag',
         'Freitag',
         'Samstag',
-        'Sonntag'
+        'Sonntag',
       ]
     > &
-      Attribute.Required;
-    start: Attribute.Time & Attribute.Required;
-    end: Attribute.Time & Attribute.Required;
+      Schema.Attribute.Required;
+    start: Schema.Attribute.Time & Schema.Attribute.Required;
+    end: Schema.Attribute.Time & Schema.Attribute.Required;
   };
 }
 
-export interface AuthorAuthors extends Schema.Component {
+export interface AuthorAuthors extends Struct.ComponentSchema {
   collectionName: 'components_author_authors';
   info: {
     icon: 'pen';
     displayName: 'authors';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    email: Attribute.Email;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    email: Schema.Attribute.Email;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'list.training-time-range': ListTrainingTimeRange;
       'author.authors': AuthorAuthors;
     }
