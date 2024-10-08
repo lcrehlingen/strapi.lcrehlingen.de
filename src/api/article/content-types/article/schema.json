@@ -5,11 +5,10 @@
     "singularName": "article",
     "pluralName": "articles",
     "displayName": "Article",
-    "name": "article"
+    "name": "article",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {
@@ -38,19 +37,19 @@
     },
     "thumbnail": {
       "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "multiple": false,
-      "required": true
+      ]
     },
     "gallery": {
       "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "multiple": true,
-      "required": false
+      ]
     },
     "slug": {
       "type": "uid",
@@ -65,21 +64,11 @@
     },
     "files": {
       "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "multiple": true,
-      "required": false
-    },
-    "authors": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "author.authors"
+      ]
     }
   }
 }

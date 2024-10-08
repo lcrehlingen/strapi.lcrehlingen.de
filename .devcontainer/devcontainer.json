@@ -1,7 +1,0 @@
-{
-    "name": "LCR - Strapi",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
-}

@@ -24,12 +24,6 @@
       "relation": "manyToMany",
       "target": "api::article.article",
       "inversedBy": "categories"
-    },
-    "sponsors": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::sponsor.sponsor",
-      "inversedBy": "categories"
     }
   }
 }

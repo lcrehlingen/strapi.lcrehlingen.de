@@ -5,11 +5,10 @@
     "singularName": "gallerie",
     "pluralName": "galleries",
     "displayName": "Gallerie",
-    "name": "gallerie"
+    "name": "gallerie",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "attributes": {
@@ -25,28 +24,23 @@
     },
     "media": {
       "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "multiple": true,
-      "required": true
+      ]
     },
     "thumbnail": {
       "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "multiple": false,
-      "required": true
+      ]
     },
     "date": {
       "type": "date",
       "required": true
-    },
-    "photographers": {
-      "type": "component",
-      "repeatable": true,
-      "component": "author.authors"
     }
   }
 }

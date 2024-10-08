@@ -25,23 +25,10 @@ export interface ListTrainingTimeRange extends Struct.ComponentSchema {
   };
 }
 
-export interface AuthorAuthors extends Struct.ComponentSchema {
-  collectionName: 'components_author_authors';
-  info: {
-    icon: 'pen';
-    displayName: 'authors';
-  };
-  attributes: {
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    email: Schema.Attribute.Email;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'list.training-time-range': ListTrainingTimeRange;
-      'author.authors': AuthorAuthors;
     }
   }
 }

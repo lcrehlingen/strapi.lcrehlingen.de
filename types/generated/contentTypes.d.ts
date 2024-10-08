@@ -492,10 +492,9 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     pluralName: 'articles';
     displayName: 'Article';
     name: 'article';
+    description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
     draftAndPublish: true;
   };
   pluginOptions: {
@@ -526,12 +525,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::category.category'
     >;
     files: Schema.Attribute.Media<'files', true>;
-    authors: Schema.Attribute.Component<'author.authors', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -543,43 +536,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::article.article'
-    >;
-  };
-}
-
-export interface ApiAthleteAthlete extends Struct.CollectionTypeSchema {
-  collectionName: 'athletes';
-  info: {
-    singularName: 'athlete';
-    pluralName: 'athletes';
-    displayName: 'Athlete';
-    name: 'athlete';
-  };
-  options: {
-    increments: true;
-    timestamps: true;
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    discipline: Schema.Attribute.String & Schema.Attribute.Required;
-    text: Schema.Attribute.RichText;
-    slug: Schema.Attribute.UID<'name'>;
-    worldathleticsId: Schema.Attribute.BigInteger & Schema.Attribute.Unique;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::athlete.athlete'
     >;
   };
 }
@@ -602,7 +558,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
-    sponsors: Schema.Attribute.Relation<'manyToMany', 'api::sponsor.sponsor'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -625,10 +580,9 @@ export interface ApiGallerieGallerie extends Struct.CollectionTypeSchema {
     pluralName: 'galleries';
     displayName: 'Gallerie';
     name: 'gallerie';
+    description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
     draftAndPublish: true;
   };
   attributes: {
@@ -639,7 +593,6 @@ export interface ApiGallerieGallerie extends Struct.CollectionTypeSchema {
     media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     thumbnail: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     date: Schema.Attribute.Date & Schema.Attribute.Required;
-    photographers: Schema.Attribute.Component<'author.authors', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -651,46 +604,6 @@ export interface ApiGallerieGallerie extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::gallerie.gallerie'
-    >;
-  };
-}
-
-export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
-  collectionName: 'sponsors';
-  info: {
-    singularName: 'sponsor';
-    pluralName: 'sponsors';
-    displayName: 'Sponsor';
-    name: 'sponsor';
-  };
-  options: {
-    increments: true;
-    timestamps: true;
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    url: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    categories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::category.category'
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sponsor.sponsor'
     >;
   };
 }
@@ -813,41 +726,6 @@ export interface ApiVeranstaltungVeranstaltung
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::veranstaltung.veranstaltung'
-    >;
-  };
-}
-
-export interface ApiVorstandVorstand extends Struct.CollectionTypeSchema {
-  collectionName: 'vorstands';
-  info: {
-    singularName: 'vorstand';
-    pluralName: 'vorstands';
-    displayName: 'Vorstand';
-    name: 'vorstand';
-  };
-  options: {
-    increments: true;
-    timestamps: true;
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    position: Schema.Attribute.String & Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    email: Schema.Attribute.Email;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::vorstand.vorstand'
     >;
   };
 }
@@ -1228,14 +1106,11 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
-      'api::athlete.athlete': ApiAthleteAthlete;
       'api::category.category': ApiCategoryCategory;
       'api::gallerie.gallerie': ApiGallerieGallerie;
-      'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::trainer.trainer': ApiTrainerTrainer;
       'api::training.training': ApiTrainingTraining;
       'api::veranstaltung.veranstaltung': ApiVeranstaltungVeranstaltung;
-      'api::vorstand.vorstand': ApiVorstandVorstand;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

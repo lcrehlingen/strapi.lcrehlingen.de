@@ -11,7 +11,6 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "0.0.0-experimental.0e316dc69ac15cab63af4c7f91191d12fc2bbc27",
     "@strapi/plugin-users-permissions": "0.0.0-experimental.0e316dc69ac15cab63af4c7f91191d12fc2bbc27",
     "@strapi/strapi": "0.0.0-experimental.0e316dc69ac15cab63af4c7f91191d12fc2bbc27",
     "knex": "<0.20.0",
