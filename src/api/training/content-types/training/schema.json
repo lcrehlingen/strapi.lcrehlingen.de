@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "singularName": "training",
+    "pluralName": "trainings",
+    "displayName": "Training",
+    "name": "training"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "reha": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "trainers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::trainer.trainer",
+      "mappedBy": "trainings"
+    },
+    "TrainingTimeRange": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.training-time-range",
+      "required": true,
+      "min": 1
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}

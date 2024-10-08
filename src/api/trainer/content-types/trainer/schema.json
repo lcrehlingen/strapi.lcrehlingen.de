@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainers",
+  "info": {
+    "singularName": "trainer",
+    "pluralName": "trainers",
+    "displayName": "Trainer",
+    "name": "trainer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": false,
+      "required": true
+    },
+    "trainings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::training.training",
+      "inversedBy": "trainers"
+    }
+  }
+}
