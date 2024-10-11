@@ -1,19 +1,19 @@
-FROM node:20-bookworm-slim
+FROM node:20-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
+WORKDIR /app
 
-WORKDIR /lcr
+FROM base AS prod-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-COPY ./package.json ./
+FROM base AS build
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm run build
 
-RUN yarn install
-
-COPY . .
-
-ENV PRODUCTION_URL=https://strapi.lcrehlingen.de
-ENV NODE_ENV production
-ENV STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE de
-
-RUN yarn run build
-
-EXPOSE 1337
-
-CMD ["yarn", "start"]
+FROM base
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/build /app/build
+EXPOSE 3000
+CMD [ "pnpm", "start" ]
