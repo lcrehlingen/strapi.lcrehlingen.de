@@ -2257,6 +2257,7 @@ packages:
 
   boolean@3.2.0:
     resolution: {integrity: sha512-d0II/GO9uf9lfUHH2BQsjxzRJZBdsjgsBiW4BvhWk/3qoKwQFjIDVN19PfX8F2D/r9PCMTtLWjYVCFrpeYUzsw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   boxen@5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}
@@ -2903,8 +2904,8 @@ packages:
   electron-to-chromium@1.5.33:
     resolution: {integrity: sha512-+cYTcFB1QqD4j4LegwLfpCNxifb6dDFUAwk6RsLusCwIaZI6or2f+q8rs5tTB2YC53HhOlIbEaqHMAAC8IOIwA==}
 
-  elliptic@6.5.7:
-    resolution: {integrity: sha512-ESVCtTwiA+XhY3wyh24QqRGBoP3rEdDUl3EDUUo9tft074fi19IrdpH7hLCMMP3CIj7jb3W96rn8lt/BqIlt5Q==}
+  elliptic@6.6.0:
+    resolution: {integrity: sha512-dpwoQcLc/2WLQvJvLRHKZ+f9FgOdjnq11rurqwekGQygGPsYSK29OMMD2WalatiqQ+XGFDglTNixpPfI+lpaAA==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -7672,7 +7673,7 @@ snapshots:
       '@strapi/design-system': 2.0.0-rc.11(@babel/runtime@7.25.7)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.1)(@lezer/common@1.2.2))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.1)(@strapi/icons@2.0.0-rc.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react-dom@18.3.0)(@types/react@18.3.11)(codemirror@5.65.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@strapi/icons': 2.0.0-rc.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@strapi/permissions': 5.0.5
-      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.4.4)
+      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.3.2)
       '@strapi/typescript-utils': 5.0.5
       '@strapi/utils': 5.0.5
       '@testing-library/dom': 10.1.0
@@ -7865,7 +7866,7 @@ snapshots:
       '@strapi/database': 5.0.5(@types/node@20.16.11)(pg@8.13.0)
       '@strapi/design-system': 2.0.0-rc.11(@babel/runtime@7.25.7)(@codemirror/autocomplete@6.18.1(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.1)(@lezer/common@1.2.2))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.1)(@strapi/icons@2.0.0-rc.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react-dom@18.3.0)(@types/react@18.3.11)(codemirror@5.65.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@strapi/icons': 2.0.0-rc.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.4.4)
+      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.3.2)
       '@strapi/utils': 5.0.5
       date-fns: 2.30.0
       date-fns-tz: 2.0.1(date-fns@2.30.0)
@@ -7954,7 +7955,7 @@ snapshots:
       '@strapi/logger': 5.0.5
       '@strapi/pack-up': 5.0.0(@swc/helpers@0.5.13)(@types/node@20.16.11)(debug@4.3.4)(terser@5.34.1)
       '@strapi/permissions': 5.0.5
-      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.4.4)
+      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.3.2)
       '@strapi/typescript-utils': 5.0.5
       '@strapi/utils': 5.0.5
       bcryptjs: 2.4.3
@@ -8379,7 +8380,7 @@ snapshots:
       '@strapi/pack-up': 5.0.0(@swc/helpers@0.5.13)(@types/node@20.16.11)(debug@4.3.4)(terser@5.34.1)
       '@strapi/permissions': 5.0.5
       '@strapi/review-workflows': 5.0.5(kt4bljfg2jyolcqpb43w6bmn2e)
-      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.4.4)
+      '@strapi/types': 5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.3.2)
       '@strapi/typescript-utils': 5.0.5
       '@strapi/upload': 5.0.5(vwcldu462oqaipdxsncqcvy46i)
       '@strapi/utils': 5.0.5
@@ -8480,6 +8481,34 @@ snapshots:
       - webpack-cli
       - webpack-dev-server
       - webpack-plugin-serve
+
+  '@strapi/types@5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.3.2)':
+    dependencies:
+      '@casl/ability': 6.5.0
+      '@koa/cors': 5.0.0
+      '@koa/router': 12.0.1
+      '@strapi/database': 5.0.5(@types/node@20.16.11)(pg@8.13.0)
+      '@strapi/logger': 5.0.5
+      '@strapi/permissions': 5.0.5
+      '@strapi/utils': 5.0.5
+      commander: 8.3.0
+      koa: 2.15.2
+      koa-body: 6.0.1
+      node-schedule: 2.1.1
+      typedoc: 0.25.10(typescript@5.3.2)
+      typedoc-github-wiki-theme: 1.1.0(typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.3.2)))(typedoc@0.25.10(typescript@5.3.2))
+      typedoc-plugin-markdown: 3.17.1(typedoc@0.25.10(typescript@5.3.2))
+    transitivePeerDependencies:
+      - '@types/node'
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+      - typescript
 
   '@strapi/types@5.0.5(@types/node@20.16.11)(pg@8.13.0)(typescript@5.4.4)':
     dependencies:
@@ -9997,7 +10026,7 @@ snapshots:
 
   electron-to-chromium@1.5.33: {}
 
-  elliptic@6.5.7:
+  elliptic@6.6.0:
     dependencies:
       bn.js: 4.12.0
       brorand: 1.1.0
@@ -11143,13 +11172,13 @@ snapshots:
   jwk-to-pem@2.0.5:
     dependencies:
       asn1.js: 5.4.1
-      elliptic: 6.5.7
+      elliptic: 6.6.0
       safe-buffer: 5.2.1
 
   jwk-to-pem@2.0.6:
     dependencies:
       asn1.js: 5.4.1
-      elliptic: 6.5.7
+      elliptic: 6.6.0
       safe-buffer: 5.2.1
     optional: true
 
@@ -13310,15 +13339,33 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
+  typedoc-github-wiki-theme@1.1.0(typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.3.2)))(typedoc@0.25.10(typescript@5.3.2)):
+    dependencies:
+      typedoc: 0.25.10(typescript@5.3.2)
+      typedoc-plugin-markdown: 3.17.1(typedoc@0.25.10(typescript@5.3.2))
+
   typedoc-github-wiki-theme@1.1.0(typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.4.4)))(typedoc@0.25.10(typescript@5.4.4)):
     dependencies:
       typedoc: 0.25.10(typescript@5.4.4)
       typedoc-plugin-markdown: 3.17.1(typedoc@0.25.10(typescript@5.4.4))
 
+  typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.3.2)):
+    dependencies:
+      handlebars: 4.7.8
+      typedoc: 0.25.10(typescript@5.3.2)
+
   typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.4.4)):
     dependencies:
       handlebars: 4.7.8
       typedoc: 0.25.10(typescript@5.4.4)
+
+  typedoc@0.25.10(typescript@5.3.2):
+    dependencies:
+      lunr: 2.3.9
+      marked: 4.3.0
+      minimatch: 9.0.5
+      shiki: 0.14.7
+      typescript: 5.3.2
 
   typedoc@0.25.10(typescript@5.4.4):
     dependencies:
