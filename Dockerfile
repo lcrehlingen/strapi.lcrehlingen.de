@@ -1,5 +1,6 @@
 FROM node:22-slim AS base
 ENV NODE_ENV=production
+ENV CI=true
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 COPY . /app
@@ -14,8 +15,11 @@ FROM base AS build
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
 
-FROM base
+FROM node:22-slim
+ENV NODE_ENV=production
+WORKDIR /app
+COPY . /app
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/build /app/build
 EXPOSE 3000
-CMD [ "pnpm", "start" ]
+CMD [ "npm", "run", "start" ]

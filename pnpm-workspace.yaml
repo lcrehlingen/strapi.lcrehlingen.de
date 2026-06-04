@@ -1,0 +1,13 @@
+allowBuilds:
+  '@swc/core': true
+  core-js-pure: true
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - react-router-dom@7.17.0
+  - react-router@7.17.0
+onlyBuiltDependencies:
+  - '@swc/core'
+  - core-js-pure
+  - esbuild
+  - sharp
