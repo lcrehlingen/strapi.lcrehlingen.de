@@ -1,6 +1,12 @@
 node_modules
 .strapi
 build
+.cache
 .git
 .github
 .env
+.env.*
+Dockerfile
+README.md
+public/uploads/*
+!public/uploads/.gitkeep

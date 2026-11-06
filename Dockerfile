@@ -1,25 +1,34 @@
 FROM node:22-slim AS base
-ENV NODE_ENV=production
-ENV CI=true
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-COPY . /app
-WORKDIR /app
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 RUN corepack enable
-RUN corepack prepare --activate
+WORKDIR /app
 
 FROM base AS prod-deps
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 FROM base AS build
+ENV NODE_ENV=production
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+COPY . .
 RUN pnpm run build
 
-FROM node:22-slim
+FROM base
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  libjemalloc2 \
+  && ln -s /usr/lib/*-linux-gnu/libjemalloc.so.2 /usr/local/lib/libjemalloc.so.2 \
+  && rm -rf /var/lib/apt/lists/*
+
 ENV NODE_ENV=production
-WORKDIR /app
+ENV LD_PRELOAD=/usr/local/lib/libjemalloc.so.2
+ENV MALLOC_ARENA_MAX=2
+
 COPY . /app
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/build /app/build
-EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+
+EXPOSE 1337
+CMD [ "pnpm", "start" ]
