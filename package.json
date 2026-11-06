@@ -14,15 +14,15 @@
     "@strapi/plugin-users-permissions": "5.61.0",
     "@strapi/strapi": "5.61.0",
     "pg": "^8.21.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-router-dom": "^7.17.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3",
     "styled-components": "^6.4.2"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",
-    "@types/react": "^19.2.16",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "typescript": "^6.0.3"
   },
   "author": {
@@ -32,7 +32,7 @@
     "uuid": "80c67b10-67f4-44cb-a7c1-025c31d17bb9"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   },
   "packageManager": "pnpm@11.15.0",
   "license": "MIT"
