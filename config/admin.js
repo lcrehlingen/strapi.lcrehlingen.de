@@ -5,4 +5,13 @@ module.exports = ({ env }) => ({
   apiToken: {
     salt: env('API_TOKEN_SALT'),
   },
+  transfer: {
+    token: {
+      salt: env('TRANSFER_TOKEN_SALT'),
+    },
+  },
+  flags: {
+    nps: env.bool('FLAG_NPS', false),
+    promoteEE: env.bool('FLAG_PROMOTE_EE', false),
+  },
 });

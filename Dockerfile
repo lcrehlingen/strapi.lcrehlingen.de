@@ -5,14 +5,12 @@ ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 RUN corepack enable
 WORKDIR /app
 
-FROM base AS prod-deps
+FROM base AS deps
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-FROM base AS build
+FROM deps AS build
 ENV NODE_ENV=production
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm run build
 
@@ -27,7 +25,7 @@ ENV LD_PRELOAD=/usr/local/lib/libjemalloc.so.2
 ENV MALLOC_ARENA_MAX=2
 
 COPY . /app
-COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=deps /app/node_modules /app/node_modules
 COPY --from=build /app/build /app/build
 
 EXPOSE 1337
