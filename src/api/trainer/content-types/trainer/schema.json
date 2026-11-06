@@ -24,7 +24,7 @@
         "images"
       ],
       "multiple": false,
-      "required": true
+      "required": false
     },
     "trainings": {
       "type": "relation",

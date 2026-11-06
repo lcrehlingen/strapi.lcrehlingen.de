@@ -4,4 +4,9 @@ module.exports = ({ env }) => ({
       jwtSecret: env('JWT_SECRET'),
     },
   },
+  upload: {
+    config: {
+      responsiveDimensions: false,
+    },
+  },
 });
